@@ -9,6 +9,7 @@ import java.util.*;
 
 @Data
 @Entity
+@Table(name = "users")
 public class User implements UserDetails {
 
     @Id
@@ -28,8 +29,12 @@ public class User implements UserDetails {
             joinColumns = @JoinColumn(name = "user_id"))
     private Set<ERole> role = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user", orphanRemoval = true)
-    private List<Film> films = new ArrayList<>();
+    //Сделать likedFilms, наверное сет из айдишек фильмов
+
+    /*
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "film", orphanRemoval = true)
+    private Set<Film> films = new HashSet<>();
+    */
 
     @Transient
     private Collection<? extends GrantedAuthority> authorities;

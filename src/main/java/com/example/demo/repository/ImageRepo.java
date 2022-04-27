@@ -9,6 +9,7 @@ import java.util.Optional;
 @Repository
 public interface ImageRepo extends JpaRepository<ImageModel, Long> {
 
-    Optional<ImageModel> findByFilmId(Long postId);
+    Optional<ImageModel> findByFilmId(Long filmId);
+    Optional<ImageModel> findById(Long id);
 
 }

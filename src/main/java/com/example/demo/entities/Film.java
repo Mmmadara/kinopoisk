@@ -24,7 +24,7 @@ public class Film {
     private Long avg;
     private Long numOfScore;
 
-    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "films", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "film", orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
 
     @PrePersist
