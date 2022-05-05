@@ -47,7 +47,6 @@ public class FilmService {
         film.setAvg((film.getAvg() * film.getNumOfScore() + score)/film.getNumOfScore());
 
         return filmRepo.save(film);
-
     }
 
     public Film getFilmById(Long filmId){
@@ -68,4 +67,7 @@ public class FilmService {
         return filmRepo.findAllByNameLike(name);
     }
 
+    public void deleteFilm(Long filmId) {
+        filmRepo.deleteById(filmId);
+    }
 }
