@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MailGenius</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS (jsDelivr CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Bundle JS (jsDelivr CDN) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="./style.css">
+    
+<!--API-->
+<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+
+<script type="text/javascript">
+    let map;
+    
+    DG.then(function () {
+        map = DG.map('map', {
+            center: [51.14, 71.46],
+            zoom: 12,
+        });
+        
+        DG.control.location({position: 'bottomright'}).addTo(map);
+        DG.control.scale().addTo(map);
+        DG.control.ruler({position: 'bottomleft'}).addTo(map);
+        DG.control.traffic().addTo(map);
+        
+        DG.marker([51.13245417363377, 71.4038372039795]).addTo(map).bindPopup('Chaplin Cinemas - Хан Шатыр');
+        DG.marker([51.12795658977983, 71.41224861145021]).addTo(map).bindPopup('Arman Cinema - Азия Парк');
+        DG.marker([51.13827075820956, 71.41053199768068]).addTo(map).bindPopup('Kinopark - Сарыарка');
+        DG.marker([51.1276872594819, 71.42529487609865]).addTo(map).bindPopup('Keruen Cinema - Керуен');
+        DG.marker([51.18812115, 71.41164734896785]).addTo(map).bindPopup('Арсенал');
+        DG.marker([51.08903555436249, 71.4074206352234]).addTo(map).bindPopup('Chaplin Cinemas - MEGA Silk Way');
+        DG.marker([51.13587419869151, 71.43868446350099]).addTo(map).bindPopup('Cinemapark Astana - Жетісу парк');
+    });
+    
+</script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container d-flex align-items-center">
+            <a href="#">
+                <img class="logo" src="../img/logo.png" alt="logo">
+            </a>
+            <nav class="main-header-nav">
+                <a href="../MainPage/index.html">Home</a>
+                <a href="../MainPage/index.html">TV Shows</a>
+                <a href="../MainPage/index.html">Movies</a>
+                <a href="../MainPage/index.html">Cartoons</a>
+                <a href="#">Map</a>
+            </nav>
+
+            <nav class="info-header-nav d-flex justify-content-between align-items-center">
+                <div>
+                    <form class="d-flex search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                </div>
+                <div>
+                    <a type="button" class="reg-btn" href="../LoginPage/index.html">Sign In</a>
+                    <a type="button" class="reg-btn" href="../RegisterPage/index.html">Sign Out</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!--MAIN-->
+    <section class="standart-section courses-wrap">
+            <div class="container">
+                <h3 class="section-title text-center text-uppercase">Map of Nur-Sultan Kinoparks</h3>
+                <div class="row d-flex flex-wrap">
+                    <div class="col-4">
+                        <div class="course-item">
+                            <a href="" class="course-img text-center">
+                                <img src="..//img/kino1.jpeg" alt="">
+                            </a>
+                            <h6 class="course-title text-uppercase"><a href="#">Chaplin Khan Shatyr</a></h6>
+                            <div class="course-prise">
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/metka.png" alt="">ТРЦ «Хан Шатыр», 2 этаж</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/street.png" alt="">Туран, 37</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/record.png" alt="">Онлайн запись</span>
+                                </div>
+                            </div>
+                            <a type="button" class="log-btn" href="#map-section">View Map</a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="course-item">
+                            <a href="" class="course-img text-center">
+                                <img src="..//img/kino2.jpg" alt="">
+                            </a>
+                            <h6 class="course-title text-uppercase"><a href="#">Chaplin Cinemas</a></h6>
+                            <div class="course-prise">
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/metka.png" alt="">ТРЦ "MEGA Silk Way"</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/street.png" alt="">Қабанбай батыр, 62</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/record.png" alt="">Онлайн запись</span>
+                                </div>
+                            </div>
+                            <a type="button" class="log-btn" href="#map-section">View Map</a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="course-item">
+                            <a href="" class="course-img text-center">
+                                <img src="..//img/kino3.jpg" alt="">
+                            </a>
+                            <h6 class="course-title text-uppercase"><a href="#">Kinopark</a></h6>
+                            <div class="course-prise">
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/metka.png" alt="">ТРЦ Керуен</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/street.png" alt="">Достық, 9</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/record.png" alt="">Онлайн запись</span>
+                                </div>
+                            </div>
+                            <a type="button" class="log-btn" href="#map-section">View Map</a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="course-item">
+                            <a href="" class="course-img text-center">
+                                <img src="..//img/kino4.jpg" alt="">
+                            </a>
+                            <h6 class="course-title text-uppercase"><a href="#">Арман</a></h6>
+                            <div class="course-prise">
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/metka.png" alt="">ТРЦ Asia park</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/street.png" alt="">Қабанбай батыр, 21</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/record.png" alt="">Онлайн запись</span>
+                                </div>
+                            </div>
+                            <a type="button" class="log-btn" href="#map-section">View Map</a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="course-item">
+                            <a href="" class="course-img text-center">
+                                <img src="..//img/kino5.jpg" alt="">
+                            </a>
+                            <h6 class="course-title text-uppercase"><a href="#">Kinopark</a></h6>
+                            <div class="course-prise">
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/metka.png" alt="">ТРЦ Сарыарка</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/street.png" alt="">Тұран, 24</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/record.png" alt="">Онлайн запись</span>
+                                </div>
+                            </div>
+                            <a type="button" class="log-btn" href="#map-section">View Map</a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="course-item">
+                            <a href="" class="course-img text-center">
+                                <img src="..//img/kino6.jpg" alt="">
+                            </a>
+                            <h6 class="course-title text-uppercase"><a href="#">Арсенал</a></h6>
+                            <div class="course-prise">
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/metka.png" alt="">Развлекательный центр</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/street.png" alt="">Ыбырай Алтынсарин, 4</span>
+                                </div>
+                                <div>
+                                    <span><img class="cinema-icon" src="..//img/record.png" alt="">Онлайн запись</span>
+                                </div>
+                            </div>
+                            <a type="button" class="log-btn" href="#map-section">View Map</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!--MAP-->
+    
+        <section class="second-section" id="map-section">
+            <div class="container">
+                <div id="map"></div>
+            </div>
+    </section>
+    
+
+    <footer class="row row-cols-5 py-5 my-5 border-top">
+        <div class=" col">
+            <a href="#home" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                <img class="img_footer" src="../img/logo2.png" alt="">
+            </a>
+            <p class="text-muted con_left">© 2022</p>
+        </div>
+
+        <div class="col">
+
+        </div>
+
+        <div class="col">
+            <h5 class="footer-title">Пользователям и партнёрам</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Все о подписках
+                    </a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Бонусы и подарки</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Активировать промокод</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Соглашение</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Политика обработки ПД</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <h5 class="footer-title"> </h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Удалить профиль
+                    </a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">О нас</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Контакты для СМИ</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Добавить подкаст
+                    </a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Сотрудничество</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <h5 class="footer-title">На устройствах</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Телевизоры и медиаплееры</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Мобильные устройства</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Компьютер
+                    </a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Подключить телевизор</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
