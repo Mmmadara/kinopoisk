@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #fff;
+    background: #111111;
     height: 100vh;
 }
 
@@ -37,6 +37,7 @@ textarea {
 
 #login-box {
     box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 15px 6px, rgba(0, 0, 0, 0.12) 0px 3px 16px 0px;
+    border-radius: 10px;
 }
 
 
